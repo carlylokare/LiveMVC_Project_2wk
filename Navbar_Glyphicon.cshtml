@@ -1,0 +1,107 @@
+<!-- Replace the Home Button in the user panel navbar with a home glyphicon -->
+
+
+
+<!-- OLD CODE, USER PANEL NAVBAR -->
+
+<body>
+	<div class="navbar navbar-default bg-primary navbar-fixed-top danger">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				@* NAV LOGO *@
+				<div id="logo-box">
+					<a href="~/Account/Login"> <img class="" id="nav-logo" src="~/Images/The-Tech-Academy-Logo.png" /></a>
+				</div>
+				@*END NAV LOGO*@
+			</div>
+			<div class="navbar-collapse collapse" style="width: 100%;">
+				<ul class="nav navbar-nav">
+					<li title="User Panel">
+						@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })
+					</li>
+					<li title="Employee Info">
+						@Html.ActionLink("Employees", "Index", "User")
+					</li>
+					<li title="Schedules">
+						@Html.ActionLink("Schedule", "Index", "Schedule")
+					</li>
+					@Html.Action("RequestCount","User")
+				</ul>
+				@Html.Partial("_LoginPartial")
+			</div>
+		</div>
+	</div>
+
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+	</div>
+	<div id="fixed-footer">
+		<footer>
+			<p>ScheduleIt - &copy; @DateTime.Now.Year</p>
+		</footer>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- NEW CODE, USER PANEL NAVBAR -->
+
+<body>
+	<div class="navbar navbar-default bg-primary navbar-fixed-top danger">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				@* NAV LOGO *@
+				<div id="logo-box">
+					<a href="~/Account/Login"> <img class="" id="nav-logo" src="~/Images/The-Tech-Academy-Logo.png" /></a>
+				</div>
+				@*END NAV LOGO*@
+			</div>
+			<div class="navbar-collapse collapse" style="width: 100%;">
+				<ul class="nav navbar-nav">
+					<li title="User Panel">
+						@Html.ActionLink(" ", "Index", "Home", new { area = "" }, new {@class = "glyphicon glyphicon-home" })
+					</li>
+					<li title="Employee Info">
+						@Html.ActionLink("Employees", "Index", "User")
+					</li>
+					<li title="Schedules">
+						@Html.ActionLink("Schedule", "Index", "Schedule")
+					</li>
+					@Html.Action("RequestCount","User")
+				</ul>
+				@Html.Partial("_LoginPartial")
+			</div>
+		</div>
+	</div>
+
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+	</div>
+	<div id="fixed-footer">
+		<footer>
+			<p>ScheduleIt - &copy; @DateTime.Now.Year</p>
+		</footer>
+	</div>
+
+</body>
+</html>
+
+
+
